@@ -1,0 +1,200 @@
+body{
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at center,
+    #000000 0%,
+    #424f61 45%,
+    #132239 100%);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:100%;
+}
+
+.text{
+    position:absolute;
+    top:65%;
+    text-align:center;
+}
+
+p{
+    color:white;
+    font-size:34px;
+    font-weight:600;
+    letter-spacing:2px;
+    user-select:none;
+    margin:0;
+
+    text-shadow:
+    0 0 10px #00c8ff,
+    0 0 20px #00c8ff,
+    0 0 40px #00c8ff;
+
+    animation:neon2 2s ease-in-out infinite alternate;
+}
+h5{
+    color:rgb(255, 249, 249);
+    font-size:20px;
+    justify-content:center;
+    
+    
+    text-shadow:
+    0 0 10px #393b3b,
+    0 0 20px #000000,
+    0 0 40px #121212;
+
+    
+}
+
+#loader{
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    border:4px solid transparent;
+
+    border-top-color:#00d4ff;
+    border-right-color:#0d8dff;
+    border-bottom-color:#7ce6ff;
+
+    box-shadow:
+    0 0 15px #00d4ff,
+    0 0 35px #00d4ff,
+    inset 0 0 15px #00d4ff;
+
+    animation:spin 15s linear infinite;
+}
+
+#loader::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset: 15px;
+
+    border-radius:50%;
+
+    border:3px dotted #66ddff;
+
+    opacity:.9;
+
+    animation:spinReverse 8s linear infinite;
+}
+
+#loader::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:40px;
+
+    border-radius:50%;
+
+    border:5px solid transparent;
+
+    border-top-color:#7efcff;
+    border-bottom-color:#2a9df4;
+
+    box-shadow:
+    0 0 20px cyan;
+
+    animation:spin 5s linear infinite;
+}
+
+#core{
+
+    position:absolute;
+
+    width:35px;
+    height:35px;
+
+    background:#00d4ff;
+
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 50px cyan,
+    0 0 80px cyan;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:translate(-50%,-50%) scale(1);
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.18);
+}
+
+100%{
+transform:translate(-50%,-50%) scale(1);
+}
+
+}
+
+@keyframes spinReverse{
+
+from{
+transform:rotate(360deg);
+}
+
+to{
+transform:rotate(0deg);
+}
+
+}
+
+@keyframes neon2{
+
+from{
+
+text-shadow:
+0 0 10px cyan,
+0 0 20px cyan;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px cyan,
+0 0 45px cyan,
+0 0 70px cyan;
+
+}
+
+}
