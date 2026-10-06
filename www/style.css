@@ -1,200 +1,268 @@
 body{
-    margin:0;
-    padding:0;
-    width:100vw;
-    height:100vh;
-    overflow:hidden;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:
-    radial-gradient(circle at center,
-    #000000 0%,
-    #424f61 45%,
-    #132239 100%);
-    font-family:Arial, Helvetica, sans-serif;
+  background: #252525;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-
 .container{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-    height:100%;
+display: flex;
+ flex-direction: column;
 }
 
 .text{
-    position:absolute;
-    top:65%;
-    text-align:center;
+  margin-top: 82vh;
 }
 
 p{
-    color:white;
-    font-size:34px;
-    font-weight:600;
-    letter-spacing:2px;
-    user-select:none;
-    margin:0;
-
-    text-shadow:
-    0 0 10px #00c8ff,
-    0 0 20px #00c8ff,
-    0 0 40px #00c8ff;
-
-    animation:neon2 2s ease-in-out infinite alternate;
+  z-index: 999;
+  user-select: none;
+  margin-left:66px;
+  font-size:36px;
+  margin-top:-26px;
+  color:#000000;
+  padding:0px;
+  position:relative;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
 }
-h5{
-    color:rgb(255, 249, 249);
-    font-size:20px;
-    justify-content:center;
-    
-    
-    text-shadow:
-    0 0 10px #393b3b,
-    0 0 20px #000000,
-    0 0 40px #121212;
 
-    
+
+#loader-wrapper{
+  position: fixed;
+    top: 120px;
+    left:40%;
+    width: 300px;
+    height: 300px;
+   margin-left:30px;  
+}
+
+@media (max-width: 1100px) {
+  #loader-wrapper {
+      left: 35%;
+  }
 }
 
 #loader{
-
-    position:absolute;
-
-    width:220px;
-    height:220px;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    border-radius:50%;
-
-    border:4px solid transparent;
-
-    border-top-color:#00d4ff;
-    border-right-color:#0d8dff;
-    border-bottom-color:#7ce6ff;
-
-    box-shadow:
-    0 0 15px #00d4ff,
-    0 0 35px #00d4ff,
-    inset 0 0 15px #00d4ff;
-
-    animation:spin 15s linear infinite;
+  display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    margin: -175px 0 0 -175px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #d4dee4;
+    border-bottom-color: #d4dee4;
+    border-right-color:#728496;
+    border-left-color: #728496;
+    box-shadow: 0 0 15px #e6f2ff;
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
 }
 
-#loader::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset: 15px;
-
-    border-radius:50%;
-
-    border:3px dotted #66ddff;
-
-    opacity:.9;
-
-    animation:spinReverse 8s linear infinite;
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-color: #dbe8ec;
+    border-style:dotted;
+    -webkit-animation: spin 18s linear infinite;
+    animation: spin 18s linear infinite;
 }
 
-#loader::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:40px;
-
-    border-radius:50%;
-
-    border:5px solid transparent;
-
-    border-top-color:#7efcff;
-    border-bottom-color:#2a9df4;
-
-    box-shadow:
-    0 0 20px cyan;
-
-    animation:spin 5s linear infinite;
+#loader:after{
+  content: "";
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-color: #dbe8ec;
+    border-width:5px;  
+    border-style:dotted solid;
+    -webkit-animation: spin 60s linear infinite; 
+    animation: spin 60s linear infinite; 
 }
 
-#core{
 
-    position:absolute;
-
-    width:35px;
-    height:35px;
-
-    background:#00d4ff;
-
-    border-radius:50%;
-
-    top:50%;
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    box-shadow:
-    0 0 20px cyan,
-    0 0 50px cyan,
-    0 0 80px cyan;
-
-    animation:pulse 2s infinite;
+#loader1:before{
+  content: "";
+    position: absolute;
+    top: 70px;
+    left: 70px;
+    right: 70px;
+    bottom: 70px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-color: #343e43;
+    border-style:dotted;
+    -webkit-animation: spin 18s linear infinite;
+    animation: spin 18s linear infinite;
 }
 
-@keyframes pulse{
 
-0%{
-transform:translate(-50%,-50%) scale(1);
+#loader1:after{
+  content: "";
+    position: absolute;
+    top: 55px;
+    left: 55px;
+    right: 55px;
+    bottom: 55px;
+    border-radius: 50%;
+    border-color: #343e43;
+    border-width:5px;  
+    border-style:double dashed solid dotted ;
+    box-shadow: 0 0 40px #b9c5d0;
+    -webkit-animation: spin 60s linear infinite;
+    animation: spin 60s linear infinite;
 }
 
-50%{
-transform:translate(-50%,-50%) scale(1.18);
+/* for spinning */
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg); 
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
-100%{
-transform:translate(-50%,-50%) scale(1);
+@keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
 }
 
+/* for text shadow */
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #cac6c6, 0 0 20px #969393, 0 0 30px #000000, 0 0 40px #6c6e71, 0 0 70px #4f6680, 0 0 80px #254364, 0 0 100px #081f38, 0 0 150px #111b25;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #c3e7ed, 0 0 35px #8ab4e2, 0 0 40px #a5c8ed, 0 0 50px #a6ccf5, 0 0 75px #b1d5fa;
+  }
 }
 
-@keyframes spinReverse{
-
-from{
-transform:rotate(360deg);
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #cac6c6, 0 0 20px #969393, 0 0 30px #000000, 0 0 40px #6c6e71, 0 0 70px #4f6680, 0 0 80px #254364, 0 0 100px #081f38, 0 0 150px #111b25;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #c3e7ed, 0 0 35px #8ab4e2, 0 0 40px #a5c8ed, 0 0 50px #a6ccf5, 0 0 75px #b1d5fa;
+  }
 }
 
-to{
-transform:rotate(0deg);
+
+/**********************Input Box***************************/
+#textInput {
+  background-color: #1f1e1ecc;
+  border-color: rgb(139, 180, 244);
+  box-shadow: 0 0 20px #6d8998,
+  inset 0 0 0px rgb(118, 116, 133);
+  border-radius: 8px;
+  color: white;
+  padding: 3px 0px 3px 20px;
+  margin: 0px 20%;
 }
 
+@media (max-width: 1200px) {
+  #textInput {
+    margin: 0px;
+  }
+}
+.input-field {
+  background-color: transparent;
+  border: none;
+  width: 95vh;
+  outline: none;
+  color: white;
+  font-family: cursive;
 }
 
-@keyframes neon2{
 
-from{
 
-text-shadow:
-0 0 10px cyan,
-0 0 20px cyan;
-
+.glow-on-hover {
+  width: 35px;
+  height: 35px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  padding: 0px;
+  margin-left: 10px;
 }
 
-to{
-
-text-shadow:
-0 0 20px cyan,
-0 0 45px cyan,
-0 0 70px cyan;
-
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
 }
 
+.glow-on-hover:active {
+  color: #181818a8
 }
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+/**********************Input Box End***************************/
